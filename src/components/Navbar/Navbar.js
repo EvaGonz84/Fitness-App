@@ -24,9 +24,7 @@ const Navbar = () => {
         <li>
           <NavLink to="/training">Training</NavLink>
         </li>
-        <li>
-          <NavLink to="/users">Users</NavLink>
-        </li>
+
         {!user ? (
           <li>
             <NavLink onClick={handleClickLogin} to="/users">

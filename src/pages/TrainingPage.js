@@ -1,29 +1,24 @@
 import { useState } from "react";
 import AddMucle from "../components/AddMuscle/AddMucle";
+import ExercisesGrid from "../components/ExercisesGrid/ExercisesGrid";
 
 const TrainingPage = () => {
-  const [muscle, setMuscle] = useState(["biceps", "triceps"]);
-
-  console.log(muscle);
+  const [muscle, setMuscle] = useState([""]);
 
   const onAddMuscle = (newMuscle) => {
-    if(muscle.includes(newMuscle))return;
-    setMuscle([newMuscle,...muscle]);
-  
+    if (muscle.includes(newMuscle)) return;
+    setMuscle([newMuscle]);
   };
 
   return (
     <>
       <div>TrainingPage</div>
-      <AddMucle 
-      onNewMuscle={onAddMuscle}
-      />
-     
-      <ol>
-        {muscle.map((item) => {
-          return <li key={item}>{item}</li>;
-        })}
-      </ol>
+
+      <AddMucle onNewMuscle={onAddMuscle} />
+
+      {muscle.map((item) => (
+        <ExercisesGrid key={item} item={item} />
+      ))}
     </>
   );
 };

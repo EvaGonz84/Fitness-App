@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 const AddMucle = ({ onNewMuscle }) => {
-  const [inputValue, setInputValue] = useState("biceps");
+  const [inputValue, setInputValue] = useState("");
 
   const onInputChange = ({ target }) => {
     setInputValue(target.value);
@@ -19,7 +19,6 @@ const AddMucle = ({ onNewMuscle }) => {
       <input
         type="text"
         placeholder="Escribe un músculo"
-        value={inputValue}
         onChange={onInputChange}
       ></input>
     </form>
