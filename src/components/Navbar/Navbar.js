@@ -29,7 +29,7 @@ const Navbar = () => {
         </li>
         {!user ? (
           <li>
-            <NavLink onclick={handleClickLogin} to="/users">
+            <NavLink onClick={handleClickLogin} to="/users">
               Log in
             </NavLink>
           </li>
