@@ -12,6 +12,7 @@ const Navbar = () => {
 
   const handleClickLogout = () => {
     setUser(false);
+    sessionStorage.removeItem("userEmail");
     navigate("/users");
   };
 
@@ -26,11 +27,16 @@ const Navbar = () => {
         </li>
 
         {!user ? (
-          <li>
-            <NavLink onClick={handleClickLogin} to="/users">
-              Log in
-            </NavLink>
-          </li>
+          <>
+            <li>
+              <NavLink onClick={handleClickLogin} to="/users">
+                Log in
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/signup">Sign Up</NavLink>
+            </li>
+          </>
         ) : (
           <button onClick={handleClickLogout}>Log out</button>
         )}

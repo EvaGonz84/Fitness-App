@@ -21,6 +21,7 @@ const AddMucle = ({ onNewMuscle }) => {
         placeholder="Escribe un músculo"
         onChange={onInputChange}
       ></input>
+      <button>Search</button>
     </form>
   );
 };

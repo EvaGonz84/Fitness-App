@@ -32,6 +32,7 @@ const ExercisesGrid = ({ item }) => {
           <p>Instructions:{exercise.instructions}</p>
         </div>
       ))}
+      ;
     </>
   );
 };

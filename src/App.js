@@ -4,6 +4,7 @@ import RequireAuth from "./components/RequireAuth/RequireAuth";
 import UserProvider from "./context/UserProvider";
 import HomePage from "./pages/HomePage";
 import NotFoundPage from "./pages/NotFoundPage";
+import SignUpPage from "./pages/SignUpPage";
 import TrainingPage from "./pages/TrainingPage";
 import UsersPage from "./pages/UsersPage";
 
@@ -23,6 +24,7 @@ function App() {
             }
           />
           <Route path="/users" element={<UsersPage />} />
+          <Route path="/signup" element={<SignUpPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Router>

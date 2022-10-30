@@ -1,31 +1,37 @@
-import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { UserContext } from "../context/UserProvider";
 import { useForm } from "react-hook-form";
+import { useContext } from "react";
+import { UserContext } from "../context/UserProvider";
 
-const UsersPage = () => {
+
+const SignUpPage = () => {
+
+
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
+
   const localEmail = localStorage.getItem("userEmail");
   const { setUser } = useContext(UserContext);
   const navigate = useNavigate();
 
   const onSubmit = (event) => {
     if (JSON.stringify(event) === localEmail) {
+      console.log("Ya estás registrado");
+      navigate("/users");
+    } else {
+      localStorage.setItem("userEmail", JSON.stringify(event));
       console.log(`Bienvenido usuario con email:${JSON.stringify(event)}`);
       setUser(true);
-      navigate("/training");
-    } else {
-      console.log("Aún no estás registrado,crea una cuenta");
-      navigate("/signup");
+      navigate('/training');
     }
   };
 
   return (
     <>
+      <h3>CREATE YOUR ACCOUNT</h3>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div>
           <input
@@ -50,9 +56,8 @@ const UsersPage = () => {
           <button>Continue</button>
         </div>
       </form>
-      <div>UsersPage</div>
     </>
   );
 };
 
-export default UsersPage;
+export default SignUpPage;
