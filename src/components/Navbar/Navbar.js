@@ -1,12 +1,17 @@
-import { useContext } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { useContext,useState } from "react";
+import {  useNavigate } from "react-router-dom";
 import { UserContext } from "../../context/UserProvider";
+import { Container, GlobalStyle, LogoContainer,Menu, MenuItems, MenuItemsLink, MobileIcon, LinkLogo } from "./Navbar.styles";
+import { FaDumbbell, FaBars, FaTimes } from "react-icons/fa";
+
 
 const Navbar = () => {
   const { user, setUser } = useContext(UserContext);
   const navigate = useNavigate();
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
 
   const handleClickLogin = () => {
+    setShowMobileMenu(!setShowMobileMenu);
     navigate("/training");
   };
 
@@ -18,30 +23,47 @@ const Navbar = () => {
 
   return (
     <>
-      <ul>
-        <li>
-          <NavLink to="/">Home</NavLink>
-        </li>
-        <li>
-          <NavLink to="/training">Training</NavLink>
-        </li>
+    <GlobalStyle/>
+    <Container>
+      <LogoContainer>
+      <FaDumbbell/>
+      <LinkLogo to={'/'}>Fitness App</LinkLogo>
+      </LogoContainer>
+      <MobileIcon onClick={()=>setShowMobileMenu(!showMobileMenu)}>
+        {
+          showMobileMenu? <FaTimes/> : <FaBars/>
+        }
+  
+      </MobileIcon>
+      <Menu open={showMobileMenu}>
+      
+        <MenuItems>
+          <MenuItemsLink onClick={()=>setShowMobileMenu(!showMobileMenu)} to="/">Home</MenuItemsLink>
+          </MenuItems>
+        <MenuItems>
+          <MenuItemsLink onClick={()=>setShowMobileMenu(!showMobileMenu)} to="/training">Training</MenuItemsLink>
+          </MenuItems>
 
         {!user ? (
           <>
-            <li>
-              <NavLink onClick={handleClickLogin} to="/users">
+            <MenuItems>
+              <MenuItemsLink  onClick={handleClickLogin} to="/users">
                 Log in
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/signup">Sign Up</NavLink>
-            </li>
+                </MenuItemsLink>
+              </MenuItems>
+            <MenuItems>
+              <MenuItemsLink onClick={()=>setShowMobileMenu(!showMobileMenu)} to="/signup">Sign Up</MenuItemsLink>
+              </MenuItems>
           </>
         ) : (
-          <button onClick={handleClickLogout}>Log out</button>
+          <MenuItems>
+          <MenuItemsLink onClick={handleClickLogout}>Log out</MenuItemsLink>
+          </MenuItems>
         )}
-      </ul>
-    </>
+      
+      </Menu>
+      </Container>
+      </>
   );
 };
 
