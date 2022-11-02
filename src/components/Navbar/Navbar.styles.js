@@ -24,6 +24,8 @@ export const Container = styled.div`
   justify-content: space-between;
   margin: auto;
   background-color: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+ 
 `;
 
 export const LogoContainer = styled.div`
@@ -32,6 +34,7 @@ export const LogoContainer = styled.div`
   display: flex;
   align-items: center;
   font-size: 1.2rem;
+
 `;
 
 export const LinkLogo = styled(NavLink)`
@@ -40,6 +43,7 @@ export const LinkLogo = styled(NavLink)`
   text-decoration: none;
   font-size: 1.3rem;
   font-weight: bold;
+  color:black;
 `;
 
 export const Menu = styled.ul`
@@ -53,7 +57,7 @@ export const Menu = styled.ul`
     left: ${({ open }) => (open ? "0" : "-100%")};
     padding: 0;
     width: 100%;
-    height: 90vh;
+    height: 95vh;
     justify-content: flex-start;
     flex-direction: column;
     align-items: center;
@@ -68,6 +72,7 @@ export const MenuItems = styled.li`
   ${mobile} {
     width: 100%;
     height: 70px;
+    padding-top:0px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -88,9 +93,11 @@ export const MenuItemsLink = styled(NavLink)`
   transition: 0.5s all ease;
 
   &:hover {
-    color: #e0144c;
+    
+    color: #FF6D28;
     transition: 0.5s all ease;
   }
+  
 
   ${mobile} {
     width: 100%;
@@ -106,7 +113,7 @@ export const MobileIcon = styled.div`
     cursor: pointer;
 
     svg {
-      fill: #e0144c;
+      fill: #FF6D28;
       margin-right: 0.5rem;
     }
   }
