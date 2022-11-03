@@ -61,10 +61,10 @@ export const Button = styled.button`
   padding: 10px;
   color: rgba(0, 0, 0, 0.8);
   cursor: pointer;
+  
 
   &:hover {
     background-color: #ff6d28;
-    color: white;
     transition: 0.6s all ease;
   }
 

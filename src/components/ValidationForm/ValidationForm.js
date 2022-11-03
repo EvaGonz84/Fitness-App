@@ -1,5 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import { Button } from "../../pages/HomePage/HomePage.styles";
+import { ContainerForm, InputEmail, Span } from "./ValidationForm.styles";
 
 const ValidationForm = (props) => {
   const {
@@ -9,8 +11,8 @@ const ValidationForm = (props) => {
   } = useForm();
   return (
     <form onSubmit={handleSubmit(props.onSubmit)}>
-      <div>
-        <input
+      <ContainerForm>
+        <InputEmail
           type="text"
           name="email"
           autoComplete="off"
@@ -18,19 +20,18 @@ const ValidationForm = (props) => {
           {...register("email", {
             required: {
               value: true,
-              message: "Se requiere un email",
+              message: "An email is required",
             },
             pattern: {
               value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
-              message: "El formato email no es correcto",
+              message: "The email is not correct",
             },
           })}
-        ></input>
-        {errors.email && <span>{errors.email.message}</span>}
-      </div>
-      <div>
-        <button>Continue</button>
-      </div>
+        ></InputEmail>
+        {errors.email && <Span>{errors.email.message}</Span>}
+
+        <Button>Continue</Button>
+      </ContainerForm>
     </form>
   );
 };

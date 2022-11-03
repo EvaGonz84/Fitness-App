@@ -1,7 +1,8 @@
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { UserContext } from "../context/UserProvider";
-import ValidationForm from "../components/ValidationForm/ValidationForm";
+import { UserContext } from "../../context/UserProvider";
+import ValidationForm from "../../components/ValidationForm/ValidationForm";
+import { Container, Title, Text, GlobalStyle } from "./UsersPage.styles";
 
 const UsersPage = () => {
   const localEmail = localStorage.getItem("userEmail");
@@ -21,7 +22,11 @@ const UsersPage = () => {
 
   return (
     <>
-      <div>UsersPage</div>
+    <GlobalStyle/>
+      <Container>
+        <Title>Welcome!Are you ready?</Title>
+        <Text>Enter your registration email and start!</Text>
+      </Container>
       <ValidationForm onSubmit={onSubmit}></ValidationForm>
     </>
   );

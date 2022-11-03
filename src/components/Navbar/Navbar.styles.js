@@ -68,6 +68,7 @@ export const Menu = styled.ul`
 export const MenuItems = styled.li`
   height: 100%;
   list-style: none;
+  
 
   ${mobile} {
     width: 100%;
@@ -88,7 +89,8 @@ export const MenuItemsLink = styled(NavLink)`
   height: 100%;
   padding: 0.5rem 2.5rem;
   font-size: 1rem;
-  font-weight: 300;
+  letter-spacing:1px;
+  font-weight: bold;
   cursor: pointer;
   transition: 0.5s all ease;
 
