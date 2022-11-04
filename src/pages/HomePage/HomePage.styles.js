@@ -65,6 +65,7 @@ export const Button = styled.button`
   &:hover {
     background-color: #ff6d28;
     transition: 0.6s all ease;
+    color:white;
   }
 
   ${mobile} {

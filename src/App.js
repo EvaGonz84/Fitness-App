@@ -3,7 +3,7 @@ import Navbar from "./components/Navbar/Navbar";
 import RequireAuth from "./components/RequireAuth/RequireAuth";
 import UserProvider from "./context/UserProvider";
 import HomePage from "./pages/HomePage/HomePage";
-import NotFoundPage from "./pages/NotFoundPage";
+import NotFoundPage from "./pages/NotFound/NotFoundPage";
 import SignUpPage from "./pages/SignUpPage/SignUpPage";
 import TrainingPage from "./pages/TrainingPage";
 import UsersPage from "./pages/UsersPage/UsersPage";

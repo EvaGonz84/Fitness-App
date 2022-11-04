@@ -25,14 +25,14 @@ const HomePage = () => {
           Enjoy the day.
         </Title>
         <Subtitle>Click here to start</Subtitle>
-        <Button onClick={handleClick}>Start training</Button>
+        <Button onClick={handleClick}>Let's go</Button>
       </ContainerImage>
       <ContainerContent>
 
       <Content>
       Strength training by levels, start from scratch to expert with different materials.Start a free trial by signing up here
       </Content>
-      <Button onClick={handleClick}>Start now</Button>
+      <Button onClick={handleClick}>Start Now</Button>
       </ContainerContent>
       
     </Container>
