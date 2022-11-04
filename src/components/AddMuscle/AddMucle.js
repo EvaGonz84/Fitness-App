@@ -1,10 +1,11 @@
 import { useState } from "react";
+import SearchMuscle from "../SearchMuscle/SearchMuscle";
 
 const AddMucle = ({ onNewMuscle }) => {
   const [inputValue, setInputValue] = useState("");
 
-  const onInputChange = ({ target }) => {
-    setInputValue(target.value);
+  const onInputChange = ({ value }) => {
+    setInputValue(value);
   };
 
   const onSubmit = (event) => {
@@ -15,14 +16,10 @@ const AddMucle = ({ onNewMuscle }) => {
   };
 
   return (
-    <form onSubmit={onSubmit}>
-      <input
-        type="text"
-        placeholder="Escribe un músculo"
-        onChange={onInputChange}
-      ></input>
-      <button>Search</button>
-    </form>
+    <SearchMuscle
+      onSubmit={onSubmit}
+      onInputChange={onInputChange}
+    ></SearchMuscle>
   );
 };
 

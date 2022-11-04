@@ -61,7 +61,6 @@ export const Button = styled.button`
   padding: 10px;
   color: rgba(0, 0, 0, 0.8);
   cursor: pointer;
-  
 
   &:hover {
     background-color: #ff6d28;
@@ -69,7 +68,6 @@ export const Button = styled.button`
   }
 
   ${mobile} {
-    width: 120px;
     font-size: 15px;
   }
 `;

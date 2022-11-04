@@ -3,7 +3,7 @@ import AddMucle from "../components/AddMuscle/AddMucle";
 import ExercisesGrid from "../components/ExercisesGrid/ExercisesGrid";
 
 const TrainingPage = () => {
-  const [muscle, setMuscle] = useState([""]);
+  const [muscle, setMuscle] = useState(["Abdominals"]);
 
   const onAddMuscle = (newMuscle) => {
     if (muscle.includes(newMuscle)) return;
@@ -12,8 +12,6 @@ const TrainingPage = () => {
 
   return (
     <>
-      <div>TrainingPage</div>
-
       <AddMucle onNewMuscle={onAddMuscle} />
 
       {muscle.map((item) => (

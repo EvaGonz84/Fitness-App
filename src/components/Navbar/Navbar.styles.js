@@ -24,8 +24,7 @@ export const Container = styled.div`
   justify-content: space-between;
   margin: auto;
   background-color: white;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
- 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 `;
 
 export const LogoContainer = styled.div`
@@ -34,7 +33,6 @@ export const LogoContainer = styled.div`
   display: flex;
   align-items: center;
   font-size: 1.2rem;
-
 `;
 
 export const LinkLogo = styled(NavLink)`
@@ -43,7 +41,7 @@ export const LinkLogo = styled(NavLink)`
   text-decoration: none;
   font-size: 1.3rem;
   font-weight: bold;
-  color:black;
+  color: black;
 `;
 
 export const Menu = styled.ul`
@@ -53,6 +51,7 @@ export const Menu = styled.ul`
   justify-content: space-between;
   ${mobile} {
     position: absolute;
+    z-index: 1;
     top: 35px;
     left: ${({ open }) => (open ? "0" : "-100%")};
     padding: 0;
@@ -68,12 +67,11 @@ export const Menu = styled.ul`
 export const MenuItems = styled.li`
   height: 100%;
   list-style: none;
-  
 
   ${mobile} {
     width: 100%;
     height: 70px;
-    padding-top:0px;
+    padding-top: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -89,17 +87,15 @@ export const MenuItemsLink = styled(NavLink)`
   height: 100%;
   padding: 0.5rem 2.5rem;
   font-size: 1rem;
-  letter-spacing:1px;
+  letter-spacing: 1px;
   font-weight: bold;
   cursor: pointer;
   transition: 0.5s all ease;
 
   &:hover {
-    
-    color: #FF6D28;
+    color: #ff6d28;
     transition: 0.5s all ease;
   }
-  
 
   ${mobile} {
     width: 100%;
@@ -115,7 +111,7 @@ export const MobileIcon = styled.div`
     cursor: pointer;
 
     svg {
-      fill: #FF6D28;
+      fill: #ff6d28;
       margin-right: 0.5rem;
     }
   }

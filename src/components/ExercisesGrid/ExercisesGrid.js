@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { ContainerGrid, ContainerTitle, MainTitle, Span, TextGrid, TitleGrid } from "./ExercisesGrid.styles";
+import { FaDumbbell } from "react-icons/fa";
 
 const ExercisesGrid = ({ item }) => {
   const [exercises, setExercises] = useState([]);
@@ -22,15 +24,19 @@ const ExercisesGrid = ({ item }) => {
 
   return (
     <>
-      <h1>EXERCISES</h1>
+    <ContainerTitle>
+    <FaDumbbell/>
+      <MainTitle>{item.toUpperCase()} WORKOUT</MainTitle>
+      <FaDumbbell/>
+      </ContainerTitle>
       {exercises.map((exercise) => (
-        <div key={exercise.name}>
-          <h2>{exercise.muscle.toUpperCase()}</h2>
-          <h3>{exercise.name}</h3>
-          <p>Difficulty:{exercise.difficulty}</p>
-          <p>Equipment:{exercise.equipment}</p>
-          <p>Instructions:{exercise.instructions}</p>
-        </div>
+        <ContainerGrid key={exercise.instructions}>
+          {/* <h2>{exercise.muscle.toUpperCase()}</h2> */}
+          <TitleGrid>EXERCISE : {exercise.name}</TitleGrid>
+          <TextGrid><Span>DIFFICULTY : </Span> {exercise.difficulty}</TextGrid>
+          <TextGrid><Span>EQUIPMENT : </Span> {exercise.equipment}</TextGrid>
+          <TextGrid><Span>INSTRUCTIONS : </Span> {exercise.instructions}</TextGrid>
+        </ContainerGrid>
       ))}
       ;
     </>
