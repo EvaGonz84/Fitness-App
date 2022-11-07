@@ -26,7 +26,9 @@ const Navbar = () => {
   const handleClickLogout = () => {
     setUser(false);
     sessionStorage.removeItem("userEmail");
-    navigate("/users");
+    setShowMobileMenu(!setShowMobileMenu);
+    
+  
   };
 
   return (

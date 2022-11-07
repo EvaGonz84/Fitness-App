@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled ,{ createGlobalStyle }from "styled-components";
 
 
@@ -16,7 +17,7 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding-top: 120px;
+  padding-top: 60px;
   
 
   
@@ -36,9 +37,21 @@ export const Text = styled.p`
   letter-spacing: 2px;
   font-size: 20px;
   color:white;
+  
 
   ${mobile} {
     font-size: 15px;
     width: 80%;
   }
+`;
+
+export const LinkSignUp = styled(Link)`
+  text-decoration:none;
+  font-weight: bold;
+  color:white;
+  &:hover {
+    color: #ff6d28;
+    transition: 0.5s all ease;
+  }
+
 `;

@@ -1,15 +1,17 @@
 import { useContext } from "react";
 import { UserContext } from "../../context/UserProvider";
-import { Navigate } from "react-router-dom";
+import Modal from "../Modal/Modal";
 
 const RequireAuth = ({ children }) => {
   const { user } = useContext(UserContext);
 
   if (!user) {
-    return <Navigate to="/users" />;
+    return <Modal/>;
   }
-
+  
   return children;
 };
 
 export default RequireAuth;
+
+// {/* <Navigate to="/users" /> */}
