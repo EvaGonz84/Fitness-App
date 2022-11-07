@@ -31,7 +31,6 @@ const ExercisesGrid = ({ item }) => {
       </ContainerTitle>
       {exercises.map((exercise) => (
         <ContainerGrid key={exercise.instructions}>
-          {/* <h2>{exercise.muscle.toUpperCase()}</h2> */}
           <TitleGrid>EXERCISE : {exercise.name}</TitleGrid>
           <TextGrid><Span>DIFFICULTY : </Span> {exercise.difficulty}</TextGrid>
           <TextGrid><Span>EQUIPMENT : </Span> {exercise.equipment}</TextGrid>

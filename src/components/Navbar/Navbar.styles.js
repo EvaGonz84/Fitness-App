@@ -7,7 +7,7 @@ const mobile = `@media (max-width: ${desktopStartWidth}px)`;
 export const GlobalStyle = createGlobalStyle`
 	body {
         font-family: Helvetica, Arial, sans-serif;
-  background-color: rgb(234, 234, 234);
+        background-color: rgb(234, 234, 234);
         width: 100%;
         height: 70px;
         margin:0px;

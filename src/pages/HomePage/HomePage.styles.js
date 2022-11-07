@@ -23,9 +23,6 @@ export const ContainerImage = styled.div`
   justify-content: center;
   align-items: center;
   text-align: center;
-
-  ${mobile} {
-  }
 `;
 
 export const Title = styled.h1`

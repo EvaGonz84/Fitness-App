@@ -14,4 +14,3 @@ const RequireAuth = ({ children }) => {
 
 export default RequireAuth;
 
-// {/* <Navigate to="/users" /> */}

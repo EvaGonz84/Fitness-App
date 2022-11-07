@@ -27,7 +27,6 @@ export const ContainerGrid = styled.div`
   justify-content: center;
   align-items: center;
   text-align: center;
-
   margin: 50px 200px;
   background-color: #3c4048;
   padding: 20px;
@@ -39,7 +38,6 @@ export const ContainerGrid = styled.div`
 `;
 
 export const TitleGrid = styled.h2`
-
   color: #ff6d28;
   font-size: 30px;
 

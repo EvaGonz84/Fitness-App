@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { Button } from "../../pages/HomePage/HomePage.styles";
 import { ContenedorModal, Overlay } from "./Modal.styles";
+
 const Modal = () => {
   
   const navigate = useNavigate();
